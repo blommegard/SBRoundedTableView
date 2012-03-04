@@ -95,6 +95,8 @@ static void *SBRoundedTableViewContentSizeObservationContext = &SBRoundedTableVi
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (context == SBRoundedTableViewContentSizeObservationContext)
         [self updateMask];
+    else
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 #pragma mark - Properties
